@@ -1,8 +1,16 @@
 package lab3;
 
 public class USMail extends ACarrier {
+	
+	public Package pack;
+
+	public USMail(Package pack) {
+		super();
+		this.pack = pack;
+	}
+	
 	@Override
-	public double cost(Package pack) {
+	public double cost() {
 		// TODO Auto-generated method stub
 		double cost =0;
 		if(pack.getWeight()<3){
