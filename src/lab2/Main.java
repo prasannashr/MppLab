@@ -17,7 +17,11 @@ public class Main {
 		Position manager = new Position("Manager", "Manager of NodeJs", nodeJs);
 		Position seniorDeveloper = new Position("Senior Developer", "Developer of NodeJs", nodeJs);
 		Position juniorDeveloper = new Position("Junior Developer", "Developer of NodeJs", nodeJs);
+		
 		Position designer = new Position("Designer", "Designer of NodeJs", nodeJs);
+		Position designer2 = new Position("Designer", "Designer of NodeJs", nodeJs);
+		
+		
 		
 		nodeJs.addPosition(manager);
 		nodeJs.addPosition(seniorDeveloper);
@@ -46,12 +50,13 @@ public class Main {
 		Employee bishal = new Employee(002, "Bishal", "", "Shrestha", new Date(), "23432-243-43", 80000.00,seniorDeveloper);		
 		Employee sanjeev = new Employee(003, "Sanjeev", "", "Shrestha", new Date(), "23432-243-43", 70000.00,designer);		
 		Employee arun = new Employee(004, "Arun", "", "Shrestha", new Date(), "23432-243-43", 80000.00,designer);
+		Employee arun2 = new Employee(004, "Arun", "", "Shrestha", new Date(), "23432-243-43", 80000.00,designer2);
 		Employee sunil = new Employee(004, "Sunil", "", "Shrestha", new Date(), "23432-243-43", 80000.00,juniorDeveloper);
 		Employee sujan = new Employee(004, "Sujan", "", "Shrestha", new Date(), "23432-243-43", 80000.00,manager2);
 		Employee hari = new Employee(004, "Hari", "", "Shrestha", new Date(), "23432-243-43", 80000.00,salesPerson);
 		Employee bandeshower = new Employee(004, "Bandeshor", "", "Shrestha", new Date(), "23432-243-43", 80000.00,rnd);
 		
-		
+		System.out.println(arun.equals(arun2));
 		
 		/*manager.setEmp(prasanna);
 		developer.setEmp(bishal);
@@ -64,7 +69,7 @@ public class Main {
 		
 		
 		//manager.printDownLine();
-		javraSoftware.printReportingHierarchu();
+		//javraSoftware.printReportingHierarchu();
 		
 
 	}

@@ -118,4 +118,58 @@ public class Position {
 	public String toString() {
 		return "Position [" + title + ", " + emp.getFirstName() + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((description == null) ? 0 : description.hashCode());		
+		result = prime * result + ((inferior == null) ? 0 : inferior.hashCode());
+		result = prime * result + ((superior == null) ? 0 : superior.hashCode());
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Position other = (Position) obj;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		
+		if (inferior == null) {
+			if (other.inferior != null)
+				return false;
+		} else if (!inferior.equals(other.inferior))
+			return false;
+		if (superior == null) {
+			if (other.superior != null)
+				return false;
+		} else if (!superior.equals(other.superior))
+			return false;
+		if (title == null) {
+			if (other.title != null)
+				return false;
+		} else if (!title.equals(other.title))
+			return false;
+		return true;
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		Position copy = (Position)super.clone();
+		return copy;
+	}
+
+	
+	
 }
