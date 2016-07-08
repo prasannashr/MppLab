@@ -150,23 +150,19 @@ public class ProcessingEmployees
      	     	.forEach(e -> System.out.println(e.getLastName()));
       System.out.println("3)  Print out all of the Employee objects whose last name begins with the letter  ‘B’  "
       		+ "and change their first name and last name to be All capital letters.");
+      
       List<Employee> beginWithB = list.stream()
     	.filter(e -> (e.getLastName()).startsWith("B")).collect(Collectors.toList());
       
-      List<Employee> beginWithBColne = new ArrayList();  
-	try {
-		beginWithBColne = beginWithB.stream().map(e->(Employee)e.clone()).collect(Collectors.toList());
-	} catch (Exception e3) {
-		// TODO Auto-generated catch block
-		e3.printStackTrace();
-	}
+      //List<Employee> beginWithBColne = beginWithB.stream().map(e->(Employee)e.clone()).collect(Collectors.toList());
 
-     /* List<Employee> beginWithBColne =  new ArrayList<>();
+      List<Employee> beginWithBColne =  new ArrayList<Employee>();
+      //beginWithBColne = Super.clone();
       if(beginWithB!=null){
 	      for(Employee emp : beginWithB){
 	    	  beginWithBColne.add((Employee) emp.clone());
 	      }
-      }*/
+      }
       beginWithBColne.stream()
 	      .forEach(e -> {
 	    	  e.setFirstName(e.getFirstName().toUpperCase());

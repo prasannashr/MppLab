@@ -1,6 +1,6 @@
 package lab8;
 
-public class Employee
+public class Employee implements Cloneable
 {
    private String firstName;
    private String lastName;
