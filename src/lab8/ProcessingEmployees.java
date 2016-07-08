@@ -1,5 +1,6 @@
 package lab8;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.stream.Stream;
 
 public class ProcessingEmployees
 {
-   public static void main(String[] args)
+   public static void main(String[] args) throws CloneNotSupportedException
    {
       // initialize array of Employees
       Employee[] employees = {
@@ -135,11 +136,50 @@ public class ProcessingEmployees
              .mapToDouble(Employee::getSalary)
              .average()
              .getAsDouble());   
-      System.out.printf("Count the number of last names that begin with the letter  ‘B’: %d%n",
+      System.out.printf("1) Count the number of last names that begin with the letter  ‘B’: %d%n",
     		 
     	 list.stream()
     	     .filter(e -> (e.getLastName()).startsWith("B")) 
     	     .count());    
+      System.out.println("2) Print out all of the Employee objects whose last name begins with the letter ‘B’ "
+      		+ "in sorted order.");
+     
+      list.stream()
+     	     	.filter(e -> (e.getLastName()).startsWith("B"))
+     	     	.sorted((e1,e2) -> e1.getLastName().compareTo(e2.getLastName()))
+     	     	.forEach(e -> System.out.println(e.getLastName()));
+      System.out.println("3)  Print out all of the Employee objects whose last name begins with the letter  ‘B’  "
+      		+ "and change their first name and last name to be All capital letters.");
+      List<Employee> beginWithB = list.stream()
+    	.filter(e -> (e.getLastName()).startsWith("B")).collect(Collectors.toList());
+      
+      List<Employee> beginWithBColne = new ArrayList();  
+	try {
+		beginWithBColne = beginWithB.stream().map(e->(Employee)e.clone()).collect(Collectors.toList());
+	} catch (Exception e3) {
+		// TODO Auto-generated catch block
+		e3.printStackTrace();
+	}
+
+     /* List<Employee> beginWithBColne =  new ArrayList<>();
+      if(beginWithB!=null){
+	      for(Employee emp : beginWithB){
+	    	  beginWithBColne.add((Employee) emp.clone());
+	      }
+      }*/
+      beginWithBColne.stream()
+	      .forEach(e -> {
+	    	  e.setFirstName(e.getFirstName().toUpperCase());
+	    	  e.setLastName(e.getLastName().toUpperCase());
+	    	  System.out.println(e.getFirstName()+" "+e.getLastName());
+	      });
+      list.stream().forEach(e -> {
+    	  System.out.println(e.getFirstName()+" "+e.getLastName());
+      });
+      
+    	
+    	
+      
    } // end main
 } // end class ProcessingEmployees
 

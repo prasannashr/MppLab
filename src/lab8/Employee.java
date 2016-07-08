@@ -16,6 +16,11 @@ public class Employee
       this.salary = salary;
       this.department = department;
    } 
+   
+   public Object clone() throws CloneNotSupportedException {
+	   Employee copy = (Employee)super.clone();
+	   return copy;
+   }
 
    // set firstName
    public void setFirstName(String firstName)
