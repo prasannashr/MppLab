@@ -18,6 +18,10 @@ public class Faculty extends Person {
 		for(int i = 0; i<courses.size();i++){
 			totalUnits+=courses.get(i).getUnits();
 		}
+		System.out.println(courses.stream()
+									.map(e->e.getUnits())
+									.reduce(0,(x,y)->x+y));
+		
 		return totalUnits;
 	}
 	
