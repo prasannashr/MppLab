@@ -19,10 +19,10 @@ public class CountWordsLamda {
 
 		
 		int counter = (int) words.stream()
-		.filter(word -> word.length() == len)
-		.filter(word -> (word.indexOf(c) >= 0))
-		.filter(word -> (word.indexOf(d) == -1))
-		.count();
+									.filter(word -> word.length() == len)
+									.filter(word -> (word.indexOf(c) >= 0))
+									.filter(word -> (word.indexOf(d) == -1))
+									.count();
 		
 		return counter;
 	}

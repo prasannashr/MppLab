@@ -19,8 +19,8 @@ public class Student extends Person {
 			totalUnits+=courses.get(i).getUnits();
 		}
 		System.out.println(courses.stream()
-				.map(e->e.getUnits())
-				.reduce(0,(x,y)->x+y));
+									.map(e->e.getUnits())
+									.reduce(0,(x,y)->x+y));
 		return totalUnits;
 	}
 	

@@ -64,8 +64,7 @@ public class Department {
 					
 					ArrayList<Course> courses = ((Faculty)persons.get(i)).getCourses();
 					
-					for(Course c: courses){
-						
+					for(Course c: courses){						
 						for(Person p :persons){
 							if(p instanceof Student){
 								if(((Student)p).getCourses().contains(c)){

@@ -56,7 +56,7 @@ public class Main {
 		Employee hari = new Employee(004, "Hari", "", "Shrestha", new Date(), "23432-243-43", 80000.00,salesPerson);
 		Employee bandeshower = new Employee(004, "Bandeshor", "", "Shrestha", new Date(), "23432-243-43", 80000.00,rnd);
 		
-		System.out.println(arun.equals(arun2));
+		//System.out.println(arun.equals(arun2));
 		
 		/*manager.setEmp(prasanna);
 		developer.setEmp(bishal);
@@ -69,7 +69,7 @@ public class Main {
 		
 		
 		//manager.printDownLine();
-		//javraSoftware.printReportingHierarchu();
+		javraSoftware.printReportingHierarchu();
 		
 
 	}

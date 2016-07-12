@@ -32,16 +32,21 @@ public class Company {
 	
 	public void print(){
 		
-		for(Department dept: depts){
+		/*for(Department dept: depts){
 			System.out.println(dept);
 			dept.print();
-		}		
+		}	*/
+		depts.stream().forEach(d -> d.print());
 	}
 	public double getSalary(){
 		double totalSalary=0.0;
 		for(Department dept: depts){
 			totalSalary+=dept.getSalary();
 		}
+		System.out.println(
+					depts.stream()
+						.mapToDouble(d->d.getSalary())
+						.sum());
 		return totalSalary;
 	}
 	public Position getTopExecutive(){
@@ -52,6 +57,11 @@ public class Company {
 				break;
 			}
 		}
+		System.out.println(
+				depts.stream()
+					.filter(d ->d.getDeptHead().getSuperior()==null)
+					.map(d ->(Position)d.getDeptHead())
+				);
 		return topExecutive;
 	}
 	public void printReportingHierarchu() {
